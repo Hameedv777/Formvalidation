@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+    
+    width: 350px;
+    height: 25px;
+    border-radius: 5px;
+    margin-left: 100px;
+    margin-top: 10px;
+    border: 0;
+    
+    }
+    select{
+    width: 355px;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    margin-left: 100px;
+}
+form{
+        width:500px;
+        height: 500px;
+        
+        
+        position: relative;
+        top: 15px;
+        left: 350px;
+        padding: 30px;
+        background-color: antiquewhite;
+
+    
+
+        
+    }
+    </style>
+    <script>
+        function formValidator()
+        {
+            var fName = document.getElementById('fName')
+            var Email=document.getElementById('Email')
+            var phone=document.getElementById('phone')
+            var addr=document.getElementById('addr')
+            var Statate=document.getElementById('stt')
+
+
+
+            if(isAlpha(fName))
+            {
+                if(validateEmail(Email))
+                {
+                  (isNumeric(phone))
+                  {
+                    if(isAlphaNumeric(addr))
+                    {
+                        if(madeSelection(stt))
+                        {
+                            return true;
+                        }
+                    }    
+                }
+                
+             }   
+                
+                
+            }
+            return false;
+        }
+
+        
+
+        function isAlpha(x) {
+            var h = /^[a-zA-Z]+$/
+            if (x.value.match(h)) 
+            {
+                return true;
+            } else {
+                alert("Enter Valid name")
+                
+            }
+        }
+        function validateEmail(x) 
+        {
+        var h = /\S+@\S+\.\S+/
+        if(x.value.match(h))
+        {
+            return true;
+
+        }
+        else
+        {
+            alert("Enter valid Email id")
+
+        }
+    }
+        function isNumeric(x) 
+        {
+        var y=x.value.length
+        if(y>=6&&y<=12)
+
+        {
+            return true;
+
+        }
+        else
+        {
+            alert("Enter Valid Phone No.")
+        }
+     }
+        function isAlphaNumeric(x) {
+            var h = /^[a-zA-Z1-9]+$/
+            if (x.value.match(h)) {
+                return true;
+            } else {
+                alert("Adrress not valid")
+                
+            }
+        }
+        function madeSelection(x)
+        {
+            if(x.value!="Please Select a state")
+            {
+                return true;
+
+            }
+            else
+            {
+                alert("State not selected")
+            }
+        }
+    
+
+</script>
+</head>
+<body style="background-color: bisque;">
+    <form  onsubmit="formValidator()">
+        <h1 style="color: blue; margin-left:65px;">REGISTRATION FORM</h1>
+        
+    
+        <input type="" placeholder="Enter name "id="fName"><br><br>
+        <input type="" placeholder="Enter Email Id" id="Email"><br><br>
+        <input type="" placeholder="Enter Phone Number"id="phone"><br><br>
+        <input type="" placeholder="Enter Address" id="addr">
+        <br><br>
+        <select name="" id="stt">
+            <option>Please Select a state</option>
+            <option value="">Kerala</option>
+            <option value="">Tamil Nadu</option>
+            <option value="">Karnnadaka</option>
+        </select>
+        
+        <br><br>
+        <input type="submit" style="background-color:green; color: beige;"><br><br>
+        <input type="button" value="Clear" style="background-color: brown; color: beige;">
+
+
+    </form>
+    
+</body>
+</html>
